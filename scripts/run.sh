@@ -1,6 +1,5 @@
-./filesystem.sh
 ./getGenSort.sh
-~/GenSort/64/gensort -a 10000000 dataset
+~/GenSort/64/gensort -a 100000000 dataset
 ephemeral-hdfs/bin/hadoop dfs -mkdir input
 ephemeral-hdfs/bin/hadoop dfs -put dataset input/
 spark/bin/spark-submit --master spark://$1:7077 --class spark.terasort.hawk.iit.edu.SparkTeraSort  file:///root/spark-tera-sort-0.0.1-SNAPSHOT.jar spark://$1:7077 hdfs://$1:9000/user/root/input/dataset

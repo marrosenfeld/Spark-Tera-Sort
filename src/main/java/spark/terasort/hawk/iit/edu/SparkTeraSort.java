@@ -13,12 +13,12 @@ public class SparkTeraSort {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		sc.hadoopConfiguration().set("dfs.replication", "1");
 		long startTime = System.currentTimeMillis();
-		JavaRDD<String> textFile = sc.textFile(args[1]);
+		JavaRDD<String> textFile = sc.textFile(args[1], 16);
 		JavaRDD<String> textFileSorted = textFile.sortBy(new Function<String, String>() {
 			public String call(String v1) throws Exception {
 				return v1.substring(0, 10);
 			}
-		}, true, 4);
+		}, true, 16);
 
 		textFileSorted.saveAsTextFile("sorted_dataset");
 		// JavaPairRDD<String, String> map = textFile.mapToPair(new

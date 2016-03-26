@@ -1,7 +1,7 @@
 #export AWS_ACCESS_KEY_ID=AKIAIWOENUHHC35TNUXQ
 #export AWS_SECRET_ACCESS_KEY=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
 #chmod 400 /home/mrosenfeld/repo/spark-tera-sort/spark.pem
-~/spark-1.6.0-bin-hadoop2.6/ec2/spark-ec2 -k spark -i /home/mrosenfeld/repo/spark-tera-sort/spark.pem -s 8 -t d2.xlarge -r us-west-2 launch Spark --spot-price=0.20
+~/spark-1.6.0-bin-hadoop2.6/ec2/spark-ec2 -k prodmr -i /home/mrosenfeld/repo/spark-tera-sort/prod.pem -s 16 -t c3.xlarge -m c3.4xlarge -r us-east-1 launch Spark --spot-price=0.40
 
 #scp -i filesystem
 #scp -i getGenSort
