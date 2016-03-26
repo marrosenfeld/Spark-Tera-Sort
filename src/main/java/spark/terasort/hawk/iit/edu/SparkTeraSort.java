@@ -21,19 +21,6 @@ public class SparkTeraSort {
 		}, true, 16);
 
 		textFileSorted.saveAsTextFile("sorted_dataset");
-		// JavaPairRDD<String, String> map = textFile.mapToPair(new
-		// PairFunction<String, String, String>() {
-		// public Tuple2<String, String> call(String t) throws Exception {
-		// return new Tuple2<String, String>(t.substring(0, 10),
-		// t.substring(10));
-		// }
-		// }).sortByKey();
-		//
-		// map.map(new Function<Tuple2<String, String>, String>() {
-		// public String call(Tuple2<String, String> v1) throws Exception {
-		// return v1._1 + v1._2;
-		// }
-		// }).saveAsTextFile("dataset_sorted");
 
 		long endTime = System.currentTimeMillis();
 		System.out.println("End");
